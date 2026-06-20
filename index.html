@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,147 +7,211 @@
 
 <style>
 
-body{
+*{
     margin:0;
-    height:100vh;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#fff6e5,#fbe7c6);
+    background:linear-gradient(135deg,#fff8eb,#f9e8c9);
     font-family:Georgia, serif;
+    padding:20px;
 }
 
 .card{
+    width:100%;
+    max-width:800px;
     background:white;
-    width:90%;
-    max-width:750px;
-    padding:40px;
     border-radius:25px;
+    padding:50px;
     text-align:center;
     box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
 .tela{
     display:none;
+    animation:fade .8s;
 }
 
 .tela.ativa{
     display:block;
 }
 
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
 h1{
     color:#8b5e3c;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.8;
+    color:#444;
 }
 
 button{
+    margin-top:35px;
     background:#8b5e3c;
     color:white;
     border:none;
-    padding:14px 28px;
+    padding:15px 35px;
     border-radius:12px;
     cursor:pointer;
     font-size:18px;
 }
 
 button:hover{
-    transform:scale(1.05);
+    opacity:.9;
 }
 
-.envelope{
-    font-size:90px;
-}
-
-.final{
+.carta{
     background:#fff8dc;
-    padding:30px;
+    padding:35px;
     border-radius:20px;
-    line-height:1.8;
+    margin-top:20px;
 }
 
-.contador{
-    font-size:60px;
-    color:#8b5e3c;
-    font-weight:bold;
+.pix{
+    background:linear-gradient(135deg,#ffd95a,#ffeaa7);
+    padding:35px;
+    border-radius:20px;
+    margin-top:25px;
+}
+
+.presente{
+    font-size:90px;
 }
 
 </style>
 </head>
-
 <body>
 
 <div class="card">
 
+    <!-- TELA 1 -->
     <div class="tela ativa">
 
-        <div style="font-size:60px;">🌻</div>
+        <div style="font-size:80px;">🌻</div>
 
-        <h1>Isadora</h1>
-
-        <h2>Você recebeu uma mensagem especial...</h2>
+        <h1>Para Isadora</h1>
 
         <p>
-            Prepare seu coração ❤️
+            Hoje é um dia muito especial.
+        </p>
+
+        <p>
+            Seus avós prepararam uma surpresa cheia de carinho para você.
         </p>
 
         <button onclick="proxima()">
-            Abrir
+            Abrir Mensagem ❤️
         </button>
 
     </div>
 
+    <!-- TELA 2 -->
     <div class="tela">
 
-        <div class="envelope">💌</div>
+        <div style="font-size:70px;">💌</div>
 
-        <h2>Antes de abrir...</h2>
+        <h1>Uma mensagem dos seus avós</h1>
 
-        <p>
-            Quem te ama mais?
-        </p>
-
-        <button onclick="proxima()">
-            Vovó e Vovô infinitamente ❤️
-        </button>
-
-    </div>
-
-    <div class="tela">
-
-        <h2>✨ Aguarde ✨</h2>
-
-        <p>Seu presente está chegando...</p>
-
-        <div class="contador" id="contador">5</div>
-
-    </div>
-
-    <div class="tela">
-
-        <div style="font-size:70px;">🎁</div>
-
-        <h1>Feliz Aniversário, Isadora!</h1>
-
-        <div class="final">
+        <div class="carta">
 
             <p>
-                Feliz Aniversário princesa de seus avós.
+                Feliz Aniversário, princesa dos seus avós.
             </p>
+
+            <br>
 
             <p>
                 Queria muito te dar um presentão,
-                mas hoje enviamos esse mimo com todo nosso coração.
+                mas hoje enviamos esse mimo
+                com todo nosso coração.
             </p>
 
+            <br>
+
             <p>
-                Não é muito, mas está cheio de amor
+                Não é muito,
+                mas está cheio de amor
                 e orgulho por você.
             </p>
+
+            <br>
 
             <p>
                 Te amamos infinito! ❤️
             </p>
 
         </div>
+
+        <button onclick="proxima()">
+            Continuar ✨
+        </button>
+
+    </div>
+
+    <!-- TELA 3 -->
+    <div class="tela">
+
+        <div class="presente">🎁</div>
+
+        <h1>Seu presente chegou!</h1>
+
+        <p>
+            Agora chegou o momento de descobrir
+            o mimo preparado especialmente para você.
+        </p>
+
+        <button onclick="proxima()">
+            Revelar Presente 🎁
+        </button>
+
+    </div>
+
+    <!-- TELA 4 -->
+    <div class="tela">
+
+        <div style="font-size:90px;">💰</div>
+
+        <h1>Surpresa!</h1>
+
+        <div class="pix">
+
+            <h2>
+                Um PIX foi enviado para você ❤️
+            </h2>
+
+            <br>
+
+            <p>
+                Confira sua conta.
+            </p>
+
+            <p>
+                Seus avós prepararam esse presente
+                com muito amor e carinho.
+            </p>
+
+        </div>
+
+        <br><br>
 
         <h3>
             Com amor,
@@ -163,48 +226,21 @@ button:hover{
 <script>
 
 let atual = 0;
-const telas = document.querySelectorAll(".tela");
+
+const telas =
+document.querySelectorAll(".tela");
 
 function proxima(){
 
     telas[atual].classList.remove("ativa");
+
     atual++;
+
     telas[atual].classList.add("ativa");
 
-    if(atual === 2){
-        iniciarContagem();
-    }
-}
-
-function iniciarContagem(){
-
-    let tempo = 5;
-
-    const contador =
-    document.getElementById("contador");
-
-    const intervalo = setInterval(()=>{
-
-        tempo--;
-        contador.innerHTML = tempo;
-
-        if(tempo === 0){
-
-            clearInterval(intervalo);
-
-            setTimeout(()=>{
-
-                telas[2].classList.remove("ativa");
-                telas[3].classList.add("ativa");
-
-            },500);
-        }
-
-    },1000);
 }
 
 </script>
 
 </body>
 </html>
-```
