@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presente Especial</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:linear-gradient(135deg,#f7f0df,#fff8ee);
+    color:#4a3a2a;
+}
+.container{
+    max-width:800px;
+    margin:40px auto;
+    padding:30px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,.1);
+}
+.section{display:none;}
+.section.active{display:block;}
+h1,h2{text-align:center;}
+.btn{
+    display:block;
+    margin:30px auto;
+    padding:12px 24px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+.qr{
+    border:2px dashed #999;
+    padding:40px;
+    text-align:center;
+    margin:20px auto;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="section active">
+<h1>🤠🌻 Uma Surpresa Especial 🌻🤠</h1>
+<p style="text-align:center">Hoje celebramos seus 15 anos. Uma data única, cheia de sonhos e momentos inesquecíveis.</p>
+<button class="btn" onclick="next()">Próximo</button>
+</div>
+
+<div class="section">
+<h2>❤️ Mensagem dos seus avós</h2>
+<p>Feliz aniversário, princesa dos seus avós!</p>
+<p>Queria muito te dar um presentão, mas hoje enviamos este mimo com todo nosso coração.</p>
+<p>Que Deus ilumine seus caminhos, realize seus sonhos e te acompanhe em cada passo dessa nova fase da sua vida.</p>
+<p>Você é muito especial para nós.</p>
+<p><b>Com amor, Vovó e Vovô ❤️</b></p>
+<button class="btn" onclick="next()">Continuar</button>
+</div>
+
+<div class="section">
+<h2>🌻 Missão Especial</h2>
+<p>O amor dos meus avós é...</p>
+<button class="btn" onclick="next()">Infinito ❤️</button>
+</div>
+
+<div class="section">
+<h2>✨ Última Etapa</h2>
+<p>Feche os olhos por 5 segundos e faça um pedido especial para esta nova fase da sua vida.</p>
+<button class="btn" onclick="next()">Abrir Presente 🎁</button>
+</div>
+
+<div class="section">
+<h1>🎁 Seu Presente</h1>
+<p style="text-align:center">Parabéns pelos seus 15 anos!</p>
+<div class="qr">
+<strong>INSIRA AQUI A IMAGEM DO QR CODE DO PIX</strong>
+</div>
+<p style="text-align:center">O verdadeiro presente é ter você em nossas vidas.</p>
+<p style="text-align:center"><b>Com amor, Vovó e Vovô ❤️</b></p>
+</div>
+
+</div>
+
+<script>
+let atual=0;
+const secoes=document.querySelectorAll('.section');
+function next(){
+  secoes[atual].classList.remove('active');
+  atual++;
+  secoes[atual].classList.add('active');
+}
+</script>
+</body>
+</html>
