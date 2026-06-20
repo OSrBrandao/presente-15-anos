@@ -1,79 +1,74 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>15 Anos da Isadora 🌻</title>
+<title>Para Isadora ❤️</title>
 
 <style>
 
 body{
     margin:0;
-    font-family:'Trebuchet MS',sans-serif;
-    background:linear-gradient(135deg,#f6edd9,#fffaf0,#f6edd9);
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
+    background:linear-gradient(135deg,#fff6e5,#fbe7c6);
+    font-family:Georgia, serif;
 }
 
-.container{
-    width:90%;
-    max-width:800px;
+.card{
     background:white;
+    width:90%;
+    max-width:750px;
     padding:40px;
     border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-    border:4px solid #d4af37;
     text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
-.section{
+.tela{
     display:none;
 }
 
-.section.active{
+.tela.ativa{
     display:block;
 }
 
-h1,h2{
-    color:#8B5E3C;
+h1{
+    color:#8b5e3c;
 }
 
 button{
-    background:#8B5E3C;
+    background:#8b5e3c;
     color:white;
     border:none;
-    padding:15px 30px;
+    padding:14px 28px;
     border-radius:12px;
     cursor:pointer;
     font-size:18px;
-    margin-top:20px;
-    transition:.3s;
 }
 
 button:hover{
     transform:scale(1.05);
 }
 
-label{
-    display:block;
-    margin:15px;
-    font-size:18px;
+.envelope{
+    font-size:90px;
 }
 
-.decoracao{
-    font-size:45px;
-    margin-bottom:20px;
-}
-
-.presente-box{
-    background:linear-gradient(135deg,#ffe08a,#ffd54f);
+.final{
+    background:#fff8dc;
     padding:30px;
     border-radius:20px;
-    margin:30px auto;
-    max-width:600px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    line-height:1.8;
+}
+
+.contador{
+    font-size:60px;
+    color:#8b5e3c;
+    font-weight:bold;
 }
 
 </style>
@@ -81,112 +76,82 @@ label{
 
 <body>
 
-<div class="container">
+<div class="card">
 
-    <!-- TELA 1 -->
-    <div class="section active">
+    <div class="tela ativa">
 
-        <div class="decoracao">🤠 🌻 💛 🌻 🤠</div>
+        <div style="font-size:60px;">🌻</div>
 
-        <h1>🌻 15 Anos da Isadora 🌻</h1>
+        <h1>Isadora</h1>
 
-        <p style="font-size:22px;">
-            Hoje é um dia muito especial...
-        </p>
+        <h2>Você recebeu uma mensagem especial...</h2>
 
         <p>
-            Uma surpresa preparada com muito amor está esperando por você.
+            Prepare seu coração ❤️
         </p>
 
-        <p>
-            Pronta para descobrir?
-        </p>
-
-        <button onclick="proxima()">Começar 🎁</button>
+        <button onclick="proxima()">
+            Abrir
+        </button>
 
     </div>
 
-    <!-- TELA 2 -->
-    <div class="section">
+    <div class="tela">
 
-        <h2>❤️ Uma pergunta importante ❤️</h2>
+        <div class="envelope">💌</div>
 
-        <p style="font-size:20px;">
+        <h2>Antes de abrir...</h2>
+
+        <p>
             Quem te ama mais?
         </p>
 
-        <label>
-            <input type="radio" name="q1">
-            Vovó
-        </label>
-
-        <label>
-            <input type="radio" name="q1">
-            Vovô
-        </label>
-
-        <label>
-            <input type="radio" name="q1">
-            Os dois infinitamente ❤️
-        </label>
-
-        <button onclick="proxima()">Próxima</button>
+        <button onclick="proxima()">
+            Vovó e Vovô infinitamente ❤️
+        </button>
 
     </div>
 
-    <!-- TELA 3 -->
-    <div class="section">
+    <div class="tela">
 
-        <h2>✨ Última Missão ✨</h2>
+        <h2>✨ Aguarde ✨</h2>
 
-        <p>
-            Feche os olhos por 5 segundos.
-        </p>
+        <p>Seu presente está chegando...</p>
 
-        <p>
-            Pense em um sonho que deseja realizar.
-        </p>
-
-        <p>
-            Agora faça um pedido especial para essa nova fase da sua vida.
-        </p>
-
-        <button onclick="proxima()">Abrir Presente 🎁</button>
+        <div class="contador" id="contador">5</div>
 
     </div>
 
-    <!-- TELA FINAL -->
-    <div class="section">
+    <div class="tela">
 
-        <div style="font-size:80px;">🎁</div>
+        <div style="font-size:70px;">🎁</div>
 
-        <h1>Parabéns, Isadora! 🌻</h1>
+        <h1>Feliz Aniversário, Isadora!</h1>
 
-        <div class="presente-box">
+        <div class="final">
 
-            <h2>❤️ Uma mensagem dos seus avós ❤️</h2>
+            <p>
+                Feliz Aniversário princesa de seus avós.
+            </p>
 
-            <p style="
-                font-size:22px;
-                line-height:1.8;
-                text-align:center;
-            ">
-                Feliz Aniversário, princesa dos seus avós.
-                <br><br>
+            <p>
+                Queria muito te dar um presentão,
+                mas hoje enviamos esse mimo com todo nosso coração.
+            </p>
 
-                Queria muito te dar um presentão, mas hoje enviamos esse mimo com todo nosso coração.
-                <br><br>
+            <p>
+                Não é muito, mas está cheio de amor
+                e orgulho por você.
+            </p>
 
-                Não é muito, mas está cheio de amor e orgulho por você.
-                <br><br>
-
+            <p>
                 Te amamos infinito! ❤️
             </p>
 
         </div>
 
-        <h3 style="margin-top:35px;">
-            Com todo amor,
+        <h3>
+            Com amor,
             <br><br>
             Vovó e Vovô ❤️
         </h3>
@@ -198,15 +163,48 @@ label{
 <script>
 
 let atual = 0;
-const telas = document.querySelectorAll('.section');
+const telas = document.querySelectorAll(".tela");
 
 function proxima(){
-    telas[atual].classList.remove('active');
+
+    telas[atual].classList.remove("ativa");
     atual++;
-    telas[atual].classList.add('active');
+    telas[atual].classList.add("ativa");
+
+    if(atual === 2){
+        iniciarContagem();
+    }
+}
+
+function iniciarContagem(){
+
+    let tempo = 5;
+
+    const contador =
+    document.getElementById("contador");
+
+    const intervalo = setInterval(()=>{
+
+        tempo--;
+        contador.innerHTML = tempo;
+
+        if(tempo === 0){
+
+            clearInterval(intervalo);
+
+            setTimeout(()=>{
+
+                telas[2].classList.remove("ativa");
+                telas[3].classList.add("ativa");
+
+            },500);
+        }
+
+    },1000);
 }
 
 </script>
 
 </body>
 </html>
+```
